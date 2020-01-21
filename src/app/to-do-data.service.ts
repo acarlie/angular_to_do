@@ -20,7 +20,7 @@ export class ToDoDataService {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
-    console.log('Hello');
+    console.log(this.todos);
     return this;
   }
 
@@ -36,7 +36,7 @@ export class ToDoDataService {
 
   // }
 
-  getAllTodos(): ToDo[] {
+  getAllToDos(): ToDo[] {
     return this.todos;
   }
 }

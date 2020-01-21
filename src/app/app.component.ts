@@ -20,4 +20,8 @@ export class AppComponent {
     this.newToDo = new ToDo();
   }
 
+  get todos() {
+    return this.toDoDataService.getAllToDos();
+  }
+
 }

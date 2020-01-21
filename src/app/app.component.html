@@ -16,9 +16,11 @@
   <section class='main'>
     <ul class="todo">
       <li class="todo__item" *ngFor="let todo of todos">
-        <input type="checkbox" class="todo__check">
-        <label for="">Title Here</label>
-        <button class="todo__delete">X</button>
+        <div class="view">
+          <input type="checkbox" class="todo__check">
+          <label for="">{{todo.title}}</label>
+          <button class="todo__delete">X</button>
+        </div>
       </li>
     </ul>
   </section>
