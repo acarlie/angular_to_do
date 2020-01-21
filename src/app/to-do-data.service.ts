@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {ToDo} from './to-do';
+import { ToDo } from './to-do';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ToDoDataService {
   // creating ToDo ids
   lastId: number = 0;
@@ -14,27 +15,28 @@ export class ToDoDataService {
 
   constructor() { }
 
-  addToDo (todo: ToDo): ToDoDataService {
-    if (!todo.id){
+  addToDo(todo: ToDo): ToDoDataService {
+    if (!todo.id) {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
+    console.log('Hello');
     return this;
   }
 
-  deleteToDo () {
+  // deleteToDo () {
 
-  }
+  // }
 
-  updateToDo () {
+  // updateToDo () {
 
-  }
+  // }
 
-  toggleComplete () {
+  // toggleComplete (todo) {
 
-  }
+  // }
 
-  getAllToDos () {
-
+  getAllTodos(): ToDo[] {
+    return this.todos;
   }
 }
