@@ -18,8 +18,8 @@
       <li class="todo__item" *ngFor="let todo of todos">
         <div class="view">
           <input type="checkbox" class="todo__check">
-          <label for="">{{todo.title}}</label>
-          <button class="todo__delete">X</button>
+          <label for="">{{todo.title}}, {{todo.id}}</label>
+          <button class="todo__delete" (click)='deleteToDo(todo)'>X</button>
         </div>
       </li>
     </ul>

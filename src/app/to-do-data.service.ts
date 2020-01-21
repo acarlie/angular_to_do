@@ -24,9 +24,10 @@ export class ToDoDataService {
     return this;
   }
 
-  // deleteToDo () {
-
-  // }
+  deleteToDo(id): ToDoDataService {
+    this.todos = this.todos.filter(x => x.id !== id);
+    return this;
+  }
 
   // updateToDo () {
 

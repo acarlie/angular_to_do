@@ -20,6 +20,10 @@ export class AppComponent {
     this.newToDo = new ToDo();
   }
 
+  deleteToDo(todo) {
+    this.toDoDataService.deleteToDo(todo.id);
+  }
+
   get todos() {
     return this.toDoDataService.getAllToDos();
   }
