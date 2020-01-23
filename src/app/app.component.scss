@@ -2,20 +2,38 @@
 @import './../assets/scss/mixins';
 
 
+
 .input{
     &-text{
         @include basic-box;
         font-size: $text-body;
+        border-bottom: 2px solid $color-neutral;
+        transition: border-bottom 1s;
+        
+        &:focus{
+            border-bottom: 2px solid $color-primary;
+        }
     }
 }
 
 .todo{
     width: 100%;
+    margin-top: $spacing-lg;
 
     &__item{
         @include basic-box;
         margin-top: $spacing;
         display: flex;
+        background-color: $color-white;
+        box-shadow: 1px 2px 3px rgba(0,0,0,.05);
+
+        &:focus{
+            border-bottom: 2px solid $color-primary;
+
+            .todo__delete::before, .todo__delete::after{
+                background-color: $color-primary;
+            }
+        }
     }
 
     &__check{
@@ -33,6 +51,7 @@
 
         &::before, &::after{
             content: ' ';
+            transition: background-color .5s;
             position: absolute;
             top: -1px;
             left: 48%;
@@ -41,12 +60,17 @@
             border-radius: 2px;
             background-color: $color-neutral;
         }
-
+        
         &::before{
             transform: rotate(-45deg);
         }
+        
         &::after{
             transform: rotate(45deg);
+        }
+
+        &:hover::before, &:hover::after{
+            background-color: $color-primary;
         }
     }
 }

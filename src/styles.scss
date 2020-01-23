@@ -10,8 +10,8 @@ body {
     font-size: $text-body;
     background: $color-neutral-lt; 
     color: $color-black;
-    background: -webkit-linear-gradient(to left, $color-neutral, $color-neutral-lt);  
-    background: linear-gradient(to left, $color-neutral, $color-neutral-lt); 
+    background: -webkit-linear-gradient(to right, $color-white, $color-neutral-lt);  
+    background: linear-gradient(to right, $color-white, $color-neutral-lt); 
 
 }
 

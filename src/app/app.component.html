@@ -15,7 +15,7 @@
   </header>
   <section class='main'>
     <ul class="todo" *ngIf="todos.length > 0">
-      <li class="todo__item" *ngFor="let todo of todos">
+      <li class="todo__item" *ngFor="let todo of todos" tabindex="1">
           <input type="checkbox" class="todo__check">
           <label for="" class="todo__text">{{todo.title}}, {{todo.id}}</label>
           <button class="todo__delete" (click)='deleteToDo(todo)'></button>
