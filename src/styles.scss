@@ -1,1 +1,27 @@
+@import './assets/scss/variables';
+@import './assets/scss/mixins';
+
 /* You can add global styles to this file, and also import other style files */
+body {
+    width: 50%;
+    margin: 0 auto;
+    font-family: $font-body;
+    padding: $spacing-lg;
+    font-size: $text-body;
+    background: $color-neutral-lt; 
+    color: $color-black;
+    background: -webkit-linear-gradient(to left, $color-neutral, $color-neutral-lt);  
+    background: linear-gradient(to left, $color-neutral, $color-neutral-lt); 
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-headings;
+}
+
+.header{
+    &__text{
+        text-align: center;
+    }
+
+}

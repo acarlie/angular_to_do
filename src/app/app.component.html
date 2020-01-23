@@ -11,16 +11,14 @@
 <section class='container'>
   <header class='header'>
     <h1 class='header__text'>Angular To Do App</h1>
-    <input class='header__input' type="text" placeholder='Add to do...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+    <input class='input-text' type="text" placeholder='Add to do...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
   </header>
   <section class='main'>
-    <ul class="todo">
+    <ul class="todo" *ngIf="todos.length > 0">
       <li class="todo__item" *ngFor="let todo of todos">
-        <div class="view">
           <input type="checkbox" class="todo__check">
-          <label for="">{{todo.title}}, {{todo.id}}</label>
-          <button class="todo__delete" (click)='deleteToDo(todo)'>X</button>
-        </div>
+          <label for="" class="todo__text">{{todo.title}}, {{todo.id}}</label>
+          <button class="todo__delete" (click)='deleteToDo(todo)'></button>
       </li>
     </ul>
   </section>
