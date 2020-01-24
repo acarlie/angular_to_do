@@ -14,6 +14,38 @@
             border-bottom: 2px solid $color-primary;
         }
     }
+
+    &-check{
+
+        &__container{
+            user-select: none;
+            position: relative;
+            height: $text-body;
+        }
+
+        &__check{
+            opacity: 0;
+            background: red;
+            z-index: 5;
+            position: relative;
+            cursor: pointer;
+
+            &:checked + .input-check__custom{
+                background: $color-primary;
+            }
+        }
+
+        &__custom{
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: $text-body;
+            width: $text-body;
+            background-color: transparent;
+            border: 2px solid $color-neutral;
+        }
+    }
 }
 
 .todo{
@@ -24,6 +56,7 @@
         @include basic-box;
         margin-top: $spacing;
         display: flex;
+        align-items: center;
         background-color: $color-white;
         box-shadow: 1px 2px 3px rgba(0,0,0,.05);
 
@@ -36,12 +69,10 @@
         }
     }
 
-    &__check{
-    }
-
     &__text{
         width: 100%;
         font-family: $font-headings;
+        padding: 0 $spacing-sm;
     }
 
     &__delete{
