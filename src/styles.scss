@@ -4,13 +4,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: $font-body;
-    padding: $spacing-lg 0;
     font-size: $text-body;
-    background: $color-neutral-lt; 
     color: $color-black;
-    background: -webkit-linear-gradient(to right, $color-white, $color-neutral-lt);  
-    background: linear-gradient(to right, $color-white, $color-neutral-lt); 
-
+    @include gradient($color-neutral, $color-neutral-lt);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,15 +14,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header{
-    box-shadow: 0px -10px 10px rgba(0,0,0,.05) inset;
-    padding: $spacing;
+    padding: $spacing-xl;
+    @include gradient($color-neutral-lt, $color-white);
 
     &__text{
+        padding: $spacing;
         text-align: center;
     }
+}
+
+.main{
+    box-shadow: 0px 10px 10px rgba(0,0,0,.05) inset;
+    padding: $spacing-xl;
 }
 
 .container{
     width: 50%;
     margin: 0 auto;
+
+    &__header{
+        &-underline{
+            margin-top: $spacing-lg;
+            font-size: $text-h4;
+            color: $color-neutral-dk;
+            border-bottom: 1px solid $color-neutral;
+        }
+    }
 }

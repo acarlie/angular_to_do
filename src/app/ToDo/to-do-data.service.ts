@@ -33,9 +33,10 @@ export class ToDoDataService {
 
   // }
 
-  // toggleComplete (todo) {
-
-  // }
+  toggleComplete (todo) {
+    todo.complete = todo.complete ? false : true;
+    return todo;
+  }
 
   getAllToDos(): ToDo[] {
     return this.todos;

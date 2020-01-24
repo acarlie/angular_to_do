@@ -53,16 +53,13 @@
     &__item{
         @include basic-box;
         opacity: .8;
-        padding: $spacing-lg;
         margin-top: $spacing;
         display: flex;
         align-items: center;
-        background-color: $color-white;
-        box-shadow: 1px 2px 3px rgba(0,0,0,.05);
         border: 2px solid $color-white;
 
         &:focus{
-            border: 2px solid $color-neutral;
+            border: 2px solid $color-primary;
             outline: none;
             opacity: 1;
 

@@ -20,12 +20,22 @@ export class AppComponent {
     this.newToDo = new ToDo();
   }
 
+  toggleComplete(todo) {
+    this.toDoDataService.toggleComplete(todo);
+  }
+
   deleteToDo(todo) {
     this.toDoDataService.deleteToDo(todo.id);
   }
 
   get todos() {
-    return this.toDoDataService.getAllToDos();
+    const todos = this.toDoDataService.getAllToDos();
+    return todos.filter(x => x.complete === false);
+  }
+
+  get completed() {
+    const todos = this.toDoDataService.getAllToDos();
+    return todos.filter(x => x.complete === true);
   }
 
 }
