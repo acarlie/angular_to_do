@@ -1,8 +1,6 @@
 @import './../assets/scss/variables';
 @import './../assets/scss/mixins';
 
-
-
 .input{
     &-text{
         @include basic-box;
@@ -54,17 +52,22 @@
 
     &__item{
         @include basic-box;
+        opacity: .8;
+        padding: $spacing-lg;
         margin-top: $spacing;
         display: flex;
         align-items: center;
         background-color: $color-white;
         box-shadow: 1px 2px 3px rgba(0,0,0,.05);
+        border: 2px solid $color-white;
 
         &:focus{
-            border-bottom: 2px solid $color-primary;
+            border: 2px solid $color-neutral;
+            outline: none;
+            opacity: 1;
 
             .todo__delete::before, .todo__delete::after{
-                background-color: $color-primary;
+                background-color: $color-secondary;
             }
         }
     }
@@ -101,7 +104,7 @@
         }
 
         &:hover::before, &:hover::after{
-            background-color: $color-primary;
+            background-color: $color-secondary
         }
     }
 }

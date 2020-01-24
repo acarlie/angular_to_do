@@ -3,10 +3,8 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-    width: 50%;
-    margin: 0 auto;
     font-family: $font-body;
-    padding: $spacing-lg;
+    padding: $spacing-lg 0;
     font-size: $text-body;
     background: $color-neutral-lt; 
     color: $color-black;
@@ -20,8 +18,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header{
+    box-shadow: 0px -10px 10px rgba(0,0,0,.05) inset;
+    padding: $spacing;
+
     &__text{
         text-align: center;
     }
+}
 
+.container{
+    width: 50%;
+    margin: 0 auto;
 }

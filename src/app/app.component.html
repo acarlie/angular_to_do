@@ -8,12 +8,12 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <!-- To Dos -->
-<section class='container'>
-  <header class='header'>
-    <h1 class='header__text'>Angular To Do App</h1>
-    <input class='input-text' type="text" placeholder='Add to do...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
-  </header>
-  <section class='main'>
+<header class='header'>
+  <h1 class='header__text'>Angular To Do App</h1>
+  <input class='input-text' type="text" placeholder='Add to do...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+</header>
+<section class='main'>
+  <div class="container">
     <ul class="todo" *ngIf="todos.length > 0">
       <li class="todo__item" *ngFor="let todo of todos" tabindex="1">
         <div class='input-check__container'>
@@ -24,7 +24,7 @@
         <button class="todo__delete" (click)='deleteToDo(todo)'></button>
       </li>
     </ul>
-  </section>
+  </div>
 </section>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
