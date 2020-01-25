@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ToDo</title>
+  <title>Angular To Do App</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Titillium+Web:600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/reset.css">
 <link rel="stylesheet" href="styles.77e975f695a4b838150a.css"></head>
 <body>
+  <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  <!-- /Github Pages hack. -->
   <app-root></app-root>
 <script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.ef4b1e1fc703b3ff76e3.js" nomodule defer></script><script src="polyfills-es2015.2987770fde9daa1d8a2e.js" type="module"></script><script src="main-es2015.52efb38662f46ee8162a.js" type="module"></script><script src="main-es5.52efb38662f46ee8162a.js" nomodule defer></script></body>
 </html>
