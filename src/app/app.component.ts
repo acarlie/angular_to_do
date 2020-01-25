@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ToDo } from './ToDo/to-do';
-import { ToDoDataService } from './ToDo/to-do-data.service';
+import { ToDo } from './to-do/to-do';
+import { ToDoDataService } from './to-do/to-do-data.service';
 
 @Component({
   selector: 'app-root',

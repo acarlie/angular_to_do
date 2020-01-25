@@ -1,0 +1,12 @@
+@import './../../assets/scss/variables';
+@import './../../assets/scss/mixins';
+
+.header{
+    padding: $spacing-xl;
+    @include gradient($color-neutral-lt, $color-white);
+
+    &__text{
+        padding: $spacing;
+        text-align: center;
+    }
+}

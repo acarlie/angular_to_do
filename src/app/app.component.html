@@ -1,22 +1,9 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <!-- To Dos -->
-<header class='header'>
-  <h1 class='header__text'>Angular To Do App</h1>
-  <div class="container">
-    <input class='input-text' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
-  </div>
-</header>
+<app-header title='Angular To Do App'>
+  <input class='input-text' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+</app-header>
 <section class='main'>
-  <section class="container">
-    <h2 class="container__header-underline">Tasks</h2>
+  <app-container title='Tasks'>
     <ul class="todo">
       <li class="todo__item" *ngFor="let todo of todos" tabindex="1">
         <div class='input-check__container'>
@@ -30,9 +17,8 @@
         No tasks to display :-(.
       </li>
     </ul>
-  </section>
-  <section class='container'>
-    <h2 class="container__header-underline">Completed</h2>
+  </app-container>
+  <app-container title='Completed'>
     <ul class="todo">
       <li class="todo__item" *ngFor="let todo of completed" tabindex="1">
         <div class='input-check__container'>
@@ -46,15 +32,8 @@
         No tasks completed T_T.
       </li>
     </ul>
-  </section>
+  </app-container>
 </section>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 

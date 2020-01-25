@@ -1,0 +1,12 @@
+@import './../../assets/scss/variables';
+
+.container{
+    &__header{
+        &-underline{
+            margin-top: $spacing-lg;
+            font-size: $text-h4;
+            color: $color-neutral-dk;
+            border-bottom: 1px solid $color-neutral;
+        }
+    }
+}
