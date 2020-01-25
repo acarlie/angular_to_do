@@ -28,6 +28,10 @@
             position: relative;
             cursor: pointer;
 
+            &:focus + .input-check__custom{
+                border: 2px solid $color-primary;
+            }
+
             &:checked + .input-check__custom{
                 background: $color-primary;
             }
@@ -64,11 +68,14 @@
         align-items: center;
         border: 2px solid $color-white;
 
-        &:focus{
-            border: 2px solid $color-primary;
+        &:focus, &:focus-within{
             outline: none;
             opacity: 1;
+        }
 
+        &:focus{
+            border: 2px solid $color-primary;
+            
             .todo__delete::before, .todo__delete::after{
                 background-color: $color-secondary;
             }
@@ -112,7 +119,10 @@
             transform: rotate(45deg);
         }
 
-        &:hover::before, &:hover::after{
+        &:hover::before, 
+        &:hover::after, 
+        &:focus::before,
+        &:focus::after{
             background-color: $color-secondary
         }
     }

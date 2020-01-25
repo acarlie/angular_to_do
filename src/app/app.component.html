@@ -5,9 +5,9 @@
 <section class='main'>
   <app-container title='Tasks'>
     <ul class="todo">
-      <li class="todo__item" *ngFor="let todo of todos" tabindex="1">
+      <li class="todo__item" *ngFor="let todo of todos" tabindex="0">
         <div class='input-check__container'>
-          <input type="checkbox" class="input-check__check"  (click)="toggleComplete(todo)" [checked]="todo.complete">
+          <input type="checkbox" class="input-check__check" (keyup.enter)="toggleComplete(todo)" (click)="toggleComplete(todo)" [checked]="todo.complete">
           <span class='input-check__custom'></span>
         </div>
         <label for="" class="todo__text">{{todo.title}}</label>
@@ -20,9 +20,9 @@
   </app-container>
   <app-container title='Completed'>
     <ul class="todo">
-      <li class="todo__item" *ngFor="let todo of completed" tabindex="1">
+      <li class="todo__item" *ngFor="let todo of completed" tabindex="0">
         <div class='input-check__container'>
-          <input type="checkbox" class="input-check__check" (click)="toggleComplete(todo)" [checked]="todo.complete">
+          <input type="checkbox" class="input-check__check" (keyup.enter)="toggleComplete(todo)" (click)="toggleComplete(todo)" [checked]="todo.complete">
           <span class='input-check__custom-checked'></span>
         </div>
         <label for="" class="todo__text">{{todo.title}}</label>
