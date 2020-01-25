@@ -25,7 +25,8 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/404.html"
             ],
             "styles": [
               "src/styles.scss"
@@ -122,8 +123,13 @@
               "devServerTarget": "toDo:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "toDo"
 }
