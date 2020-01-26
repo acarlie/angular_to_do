@@ -71,15 +71,9 @@
         &:focus, &:focus-within{
             outline: none;
             opacity: 1;
-        }
-
-        &:focus{
             border: 2px solid $color-primary;
-            
-            .todo__delete::before, .todo__delete::after{
-                background-color: $color-secondary;
-            }
         }
+        
 
         &-disabled{
             @extend .todo__item;

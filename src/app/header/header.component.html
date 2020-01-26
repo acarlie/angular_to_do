@@ -1,5 +1,7 @@
 <header class='header'>
-    <h1 class='header__text'>{{title}}</h1>
+    <div class='header__text-wrapper'>
+        <h1 class='header__text' [attr.data-text]="title">{{title}}</h1>
+    </div>
     <div class="container">
         <ng-content></ng-content>
     </div>

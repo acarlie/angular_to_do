@@ -1,12 +1,29 @@
 @import './../../assets/scss/variables';
+@import './../../assets/scss/mixins';
 
 .container{
+    position: relative;
+    margin-top: $spacing-lg;
+
+    &__content{
+        position: relative;
+        @include box;
+    }
+
     &__header{
         &-underline{
-            margin-top: $spacing-lg;
-            font-size: $text-h4;
+            font-size: $text-h5;
             color: $color-neutral-dk;
             border-bottom: 1px solid $color-neutral;
         }
+    }
+
+    &__shadow{
+        @include gradient-blue;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 5px;
+        left: 5px;
     }
 }

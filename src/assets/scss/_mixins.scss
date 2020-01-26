@@ -1,7 +1,11 @@
-@mixin basic-box {
+@mixin box {
     width: 100%;
     padding: $spacing-lg;
     background-color: $color-white;
+}
+
+@mixin basic-box {
+    @include box;
     box-shadow: 1px 2px 3px rgba(0,0,0,.05);
 }
 
@@ -9,4 +13,21 @@
     background: $color-dark;
     background: -webkit-linear-gradient(to right, $color-light, $color-dark);  
     background: linear-gradient(to right, $color-light, $color-dark); 
+}
+
+@mixin gradient-aqua {
+    @include gradient(#1CD8D2, #93EDC7);
+}
+
+@mixin gradient-dk-blue {
+    @include gradient(#1488CC, #2B32B2);
+}
+
+@mixin gradient-blue {
+    @include gradient(rgb(85, 207, 203), rgb(164, 235, 205));
+    // @include gradient(#4A00E0, #8E2DE2);
+}
+
+@mixin gradient-green {
+    @include gradient(#DCE35B, #45B649);
 }

@@ -6,16 +6,23 @@ body {
     font-family: $font-body;
     font-size: $text-body;
     color: $color-black;
-    @include gradient($color-neutral, $color-neutral-lt);
+    padding: $spacing;
+    
+    // @include gradient(#00c3c1, #ebfe8d);
+    @include gradient(#ddd, #eee);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-headings;
 }
 
+h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
 .main{
-    box-shadow: 0px 10px 10px rgba(0,0,0,.05) inset;
-    padding: $spacing-xl;
+    // box-shadow: 0px 10px 10px rgba(247, 242, 242, 0.05) inset;
+    padding: 0 $spacing-xl;
 }
 
 .container{
@@ -24,6 +31,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media only screen and (min-width: 1000px){
+    body{
+        padding: $spacing-xl;
+    }
+
     .container{
         width: 50%;
         margin: 0 auto;
