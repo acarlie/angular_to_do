@@ -56,22 +56,23 @@
     margin-top: $spacing-lg;
 
     &__item{
-        @include basic-box;
+        cursor: pointer;
         opacity: .8;
         margin-top: $spacing;
         display: flex;
         align-items: center;
         border: 2px solid $color-white;
+        padding: $spacing;
 
-        &:focus, &:focus-within{
+        &:focus, &:focus-within, &:hover{
             outline: none;
             opacity: 1;
-            border: 2px solid $color-primary;
+            border: 2px solid $color-neutral;
         }
 
 
         &-disabled{
-            @extend .todo__item;
+            @include basic-box;
             background: $color-neutral-lt;
             border-color: $color-neutral-lt;
         }
