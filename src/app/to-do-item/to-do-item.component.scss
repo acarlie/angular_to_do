@@ -1,17 +1,7 @@
-@import './../assets/scss/variables';
-@import './../assets/scss/mixins';
+@import './../../assets/scss/variables';
+@import './../../assets/scss/mixins';
 
 .input{
-    &-text{
-        @include box;
-        font-size: $text-body;
-        width: 100%;
-
-        &--add{
-            @extend .input-text;
-        }
-    }
-
     &-check{
 
         &__container{
@@ -90,6 +80,13 @@
             opacity: 1;
             border-left: 3px solid $color-neutral;
             border-right: 3px solid $color-neutral;
+        }
+
+
+        &--disabled{
+            @include box;
+            background: $color-neutral-lt;
+            border-color: $color-neutral-lt;
         }
     }
 

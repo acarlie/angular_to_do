@@ -25,16 +25,16 @@ export class ToDoDataService {
   }
 
   deleteToDo(id): ToDoDataService {
-    this.todos = this.todos.filter(x => x.id !== id);
+    setTimeout(() => {
+      this.todos = this.todos.filter(x => x.id !== id);
+    }, 250)
     return this;
   }
 
-  // updateToDo () {
-
-  // }
-
   toggleComplete (todo) {
-    todo.complete = todo.complete ? false : true;
+    setTimeout(() => {
+      todo.complete = todo.complete ? false : true;
+    }, 700);
     return todo;
   }
 

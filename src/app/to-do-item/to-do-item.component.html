@@ -1,0 +1,8 @@
+<li class="todo__item" tabindex="0">
+    <div class='input-check__container'>
+      <input type="checkbox" class="input-check__check" (keyup.enter)="toggleToDo(todo)" (click)="toggleToDo(todo)" [checked]="todo.complete">
+      <span [class.input-check__custom]='!isComplete' [class.input-check__custom-checked]='isComplete'></span>
+    </div>
+    <label for="" class="todo__text">{{todo.title}}</label>
+    <button class="todo__delete" (click)='deleteToDo(todo)'></button>
+</li>

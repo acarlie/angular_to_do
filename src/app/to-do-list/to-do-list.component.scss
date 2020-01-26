@@ -1,0 +1,15 @@
+@import './../../assets/scss/variables';
+@import './../../assets/scss/mixins';
+
+.todo{
+    width: 100%;
+    margin-top: $spacing-lg;
+    
+    &__item{
+        &--disabled{
+            @include box;
+            background: $color-neutral-lt;
+            border-color: $color-neutral-lt;
+        }
+    }
+}

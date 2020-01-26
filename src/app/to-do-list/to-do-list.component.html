@@ -1,0 +1,6 @@
+<ul class="todo">
+    <ng-content></ng-content>
+    <li class="todo__item--disabled" *ngIf="condition">
+      {{message}}
+    </li>
+</ul>

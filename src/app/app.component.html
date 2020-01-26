@@ -1,40 +1,25 @@
 <!-- To Dos -->
 <div class="background"></div>
+
 <app-header title='To Do'>
   <app-container [padding]='false'>
-    <input class='input-text' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+    <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
   </app-container>
 </app-header>
+
 <section class='main'>
   <app-container title='Tasks' [padding]='true'>
-    <ul class="todo">
-      <li class="todo__item" *ngFor="let todo of todos" tabindex="0">
-        <div class='input-check__container'>
-          <input type="checkbox" class="input-check__check" (keyup.enter)="toggleComplete(todo)" (click)="toggleComplete(todo)" [checked]="todo.complete">
-          <span class='input-check__custom'></span>
-        </div>
-        <label for="" class="todo__text">{{todo.title}}</label>
-        <button class="todo__delete" (click)='deleteToDo(todo)'></button>
-      </li>
-      <li class="todo__item-disabled" *ngIf="todos.length === 0">
-        No tasks to display :-(.
-      </li>
-    </ul>
+    <app-to-do-list message='No tasks to display :-(.' [condition]="todos.length === 0">
+      <app-to-do-item *ngFor='let todo of todos' (deleteEvent)='deleteToDo($event)' (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='false'>
+      </app-to-do-item>
+    </app-to-do-list>
   </app-container>
+
   <app-container title='Completed' [padding]='true'>
-    <ul class="todo">
-      <li class="todo__item" *ngFor="let todo of completed" tabindex="0">
-        <div class='input-check__container'>
-          <input type="checkbox" class="input-check__check" (keyup.enter)="toggleComplete(todo)" (click)="toggleComplete(todo)" [checked]="todo.complete">
-          <span class='input-check__custom-checked'></span>
-        </div>
-        <label for="" class="todo__text">{{todo.title}}</label>
-        <button class="todo__delete" (click)='deleteToDo(todo)'></button>
-      </li>
-      <li class="todo__item-disabled" *ngIf="completed.length === 0">
-        No tasks completed T_T.
-      </li>
-    </ul>
+    <app-to-do-list message='No tasks completed T_T.' [condition]="completed.length === 0">
+      <app-to-do-item *ngFor='let todo of completed' (deleteEvent)='deleteToDo($event)' (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='true'>
+      </app-to-do-item>
+    </app-to-do-list>
   </app-container>
 </section>
 

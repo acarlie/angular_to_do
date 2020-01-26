@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ContainerComponent } from './container/container.component';
 import { HeaderComponent } from './header/header.component';
+import { ToDoItemComponent } from './to-do-item/to-do-item.component';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContainerComponent,
-    HeaderComponent
+    HeaderComponent,
+    ToDoItemComponent,
+    ToDoListComponent
   ],
   imports: [
     BrowserModule,
