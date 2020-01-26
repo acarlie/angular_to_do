@@ -5,13 +5,23 @@
     position: relative;
     margin-top: $spacing-lg;
 
+    &:focus-within{
+        .container__shadow{
+            @include gradient-secondary;
+        }
+    }
+
     &__content{
         position: relative;
-        @include box;
+        
+        &--padding{
+            @extend .container__content;
+            @include box;
+        }
     }
 
     &__header{
-        &-underline{
+        &--underline{
             font-size: $text-h5;
             color: $color-neutral-dk;
             border-bottom: 1px solid $color-neutral;
@@ -19,7 +29,7 @@
     }
 
     &__shadow{
-        @include gradient-blue;
+        @include gradient-main;
         height: 100%;
         width: 100%;
         position: absolute;

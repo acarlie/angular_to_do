@@ -11,7 +11,7 @@
     }
 
     &__text{
-        @include gradient-blue;
+        @include gradient-main;
         position: relative;
         -webkit-background-clip: text;
         color: transparent;

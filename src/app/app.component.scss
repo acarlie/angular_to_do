@@ -3,14 +3,9 @@
 
 .input{
     &-text{
-        @include basic-box;
+        @include box;
         font-size: $text-body;
-        border-bottom: 2px solid $color-neutral;
-        transition: border-bottom 1s;
-        
-        &:focus{
-            border-bottom: 2px solid $color-primary;
-        }
+        width: 100%;
     }
 
     &-check{
@@ -73,7 +68,7 @@
             opacity: 1;
             border: 2px solid $color-primary;
         }
-        
+
 
         &-disabled{
             @extend .todo__item;

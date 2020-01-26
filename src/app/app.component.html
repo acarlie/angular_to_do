@@ -1,9 +1,14 @@
 <!-- To Dos -->
 <app-header title='To Do'>
-  <input class='input-text' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+  <svg class='background' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#445" fill-opacity="1" d="M0,64L60,64C120,64,240,64,360,80C480,96,600,128,720,138.7C840,149,960,139,1080,117.3C1200,96,1320,64,1380,48L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+  <app-container [padding]='false'>
+    <input class='input-text' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+  </app-container>
 </app-header>
 <section class='main'>
-  <app-container title='Tasks'>
+  <app-container title='Tasks' [padding]='true'>
     <ul class="todo">
       <li class="todo__item" *ngFor="let todo of todos" tabindex="0">
         <div class='input-check__container'>
@@ -18,7 +23,7 @@
       </li>
     </ul>
   </app-container>
-  <app-container title='Completed'>
+  <app-container title='Completed' [padding]='true'>
     <ul class="todo">
       <li class="todo__item" *ngFor="let todo of completed" tabindex="0">
         <div class='input-check__container'>
