@@ -1,7 +1,11 @@
-@mixin basic-box {
+@mixin box {
     width: 100%;
     padding: $spacing-lg;
     background-color: $color-white;
+}
+
+@mixin basic-box {
+    @include box;
     box-shadow: 1px 2px 3px rgba(0,0,0,.05);
 }
 
@@ -9,4 +13,12 @@
     background: $color-dark;
     background: -webkit-linear-gradient(to right, $color-light, $color-dark);  
     background: linear-gradient(to right, $color-light, $color-dark); 
+}
+
+@mixin gradient-secondary {
+    @include gradient(rgb(238, 105, 71), rgb(248, 215, 69));
+}
+
+@mixin gradient-main {
+    @include gradient(rgb(104, 214, 108), rgb(226, 231, 128));
 }
