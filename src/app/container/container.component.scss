@@ -13,6 +13,8 @@
 
     &__content{
         position: relative;
+        top: -2.5px;
+        left: -2.5px;
         
         &--padding{
             @extend .container__content;
@@ -33,7 +35,7 @@
         height: 100%;
         width: 100%;
         position: absolute;
-        top: 5px;
-        left: 5px;
+        top: 2.5px;
+        left: 2.5px;
     }
 }

@@ -1,6 +1,42 @@
 @import './../assets/scss/variables';
 @import './../assets/scss/mixins';
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main{
+    flex: 9;
+    padding: $spacing-xl;
+}
+
+.footer{
+    flex: 1;
+    justify-self: flex-end;
+    padding: $spacing-xl;
+    box-shadow: 0px 5px 10px rgba(0,0,14,.3) inset;
+    background-color: rgb(58, 58, 75);
+    color: $color-neutral;
+    text-align: center;
+    font-size: small;
+    line-height: $spacing-xl;
+    letter-spacing: .5px;
+
+    &__link{
+        text-decoration: none;
+        &:link, &:visited, &:active{
+            color: #99a;
+        }
+
+        &:hover{
+            color: #bbc;
+        }
+    }
+    
+}
+
 .input{
     &-text{
         @include box;
@@ -133,4 +169,3 @@
         }
     }
 }
-
