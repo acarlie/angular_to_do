@@ -1,9 +1,7 @@
 @import './../../assets/scss/variables';
 @import './../../assets/scss/mixins';
 
-.header{
-    margin-bottom: $spacing-xl;
-    
+.header{        
     &__text-wrapper{
         display: flex;
         align-items: center;

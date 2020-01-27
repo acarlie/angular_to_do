@@ -1,0 +1,8 @@
+@import './../../assets/scss/variables';
+
+.divider{
+    margin: $spacing-xl 0;
+    background-color: #334;
+    border: none;
+    height: 1.25px;
+}

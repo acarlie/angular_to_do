@@ -6,7 +6,9 @@
         <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
       </app-container>
     </app-header>
-  
+
+    <app-divider></app-divider>
+
     <app-container title='Tasks' [padding]='true'>
       <app-to-do-list message='No tasks to display :-(.' [condition]="todos.length === 0">
         <app-to-do-item *ngFor='let todo of todos' (deleteEvent)='deleteToDo($event)' (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='false'>
