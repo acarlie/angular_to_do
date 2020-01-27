@@ -3,7 +3,7 @@
   <main class='main'>
     <app-header title='To Do'>
       <app-container [padding]='false'>
-        <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()">
+        <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()" alt='Add a task.'>
       </app-container>
     </app-header>
 

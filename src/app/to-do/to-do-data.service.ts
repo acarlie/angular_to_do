@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToDo } from './to-do';
 
 const exampleToDos = [
-  {id: 0, title: 'This task is an example, mark it complete using the checkbox.', complete: false},
+  {id: 0, title: '← Mark this example task complete using the checkbox.', complete: false},
   {id: 1, title: 'Walk the cat.', complete: false}, 
   {id: 2, title: 'Mow the lawn.', complete: false}, 
   {id: 3, title: 'This is a completed task, delete it using the delete button →', complete: true}
@@ -29,10 +29,7 @@ export class ToDoDataService {
 
   setTodos(): ToDoDataService {
     if (this.todos.length === 0) {
-      
       exampleToDos.forEach(x => this.todos.push(x));
-      console.log(this.todos);
-      console.log('hello');
     } else {
       this.todos.map((x, i) => {
         x.id = i;
