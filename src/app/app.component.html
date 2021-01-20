@@ -2,10 +2,12 @@
 <div class="wrapper">
   <main class='main'>
     <app-header title='To Do'>
-      <app-container [padding]='false'>
-        <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()" alt='Add a task.'>
+      <app-container [padding]='false' ariaLabel="Add a task">
+        <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()" aria-label='Add a task.'>
       </app-container>
     </app-header>
+
+    <div class="sr-only" aria-live="polite" role="status">{{notification ? notification : null}}</div>
 
     <app-divider></app-divider>
 

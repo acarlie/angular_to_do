@@ -12,6 +12,15 @@
     padding: $spacing-xl;
 }
 
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
 .footer{
     flex: 1;
     justify-self: flex-end;
@@ -45,6 +54,9 @@
 
         &--add{
             @extend .input-text;
+            &:focus {
+                box-shadow: 0 0 0 2px $color-secondary;
+            }
         }
     }
 

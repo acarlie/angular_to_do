@@ -9,7 +9,8 @@ export class ContainerComponent implements OnInit {
 
   @Input('title') title: string;
   @Input('padding') padding: boolean;
-
+  @Input('ariaLabel') ariaLabel: string;
+  
   constructor() { }
 
   ngOnInit() {

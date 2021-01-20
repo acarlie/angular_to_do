@@ -13,7 +13,6 @@ const exampleToDos = [
 })
 
 export class ToDoDataService {
-  // creating ToDo ids
   todos: ToDo[] = JSON.parse(localStorage.getItem('todos')) || [];
   lastId: number = 0;
 
@@ -47,7 +46,7 @@ export class ToDoDataService {
     return this;
   }
 
-  deleteToDo(id): ToDoDataService {
+  deleteToDo(id: number): ToDoDataService {
     setTimeout(() => {
       this.todos = this.todos.filter(x => x.id !== id);
       this.saveToLocal(this.todos);
@@ -55,7 +54,7 @@ export class ToDoDataService {
     return this;
   }
 
-  toggleComplete (todo): ToDoDataService {
+  toggleComplete (todo: any): ToDoDataService {
     setTimeout(() => {
       todo.complete = todo.complete ? false : true;
       this.saveToLocal(this.todos);
@@ -63,7 +62,7 @@ export class ToDoDataService {
     return todo;
   }
 
-  saveToLocal(todos){
+  saveToLocal(todos: any){
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 

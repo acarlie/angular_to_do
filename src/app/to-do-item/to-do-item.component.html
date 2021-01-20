@@ -1,8 +1,10 @@
-<li class="todo__item" tabindex="0">
-    <div class='input-check__container'>
-      <input type="checkbox" class="input-check__check" (keyup.enter)="toggleToDo(todo)" (click)="toggleToDo(todo)" [checked]="todo.complete" alt='Mark task complete.'>
+<li class="todo__item">
+    <button class='input-check__container' (click)="toggleToDo(todo)" aria-label="Mark task complete" attr.aria-describedby="{{id}}">
+      <span class="input-check__check {{isComplete ? 'input-check__check--compete': ''}}"></span>
       <span [class.input-check__custom]='!isComplete' [class.input-check__custom-checked]='isComplete'></span>
-    </div>
-    <label for="" class="todo__text">{{todo.title}}</label>
-    <button class="todo__delete" (click)='deleteToDo(todo)'></button>
+    </button>
+    <span id="{{id}}" class="todo__text">{{todo.title}}</span>
+    <button class="todo__delete" (click)='deleteToDo(todo)' aria-label="Delete task" attr.aria-describedby="{{id}}">
+      <span class="todo__delete-inner"></span>
+    </button>
 </li>

@@ -1,7 +1,7 @@
-<section class="container">
-    <section class='container__shadow'></section>
-    <section class='container__content' [class.container__content]='!padding' [class.container__content--padding]='padding'>
+<section class="container" attr.aria-label="ariaLabel ? ariaLabel : null">
+    <div class='container__shadow'></div>
+    <div class='container__content' [class.container__content]='!padding' [class.container__content--padding]='padding'>
         <h2 class="container__header--underline" *ngIf='title'>{{title}}</h2>
         <ng-content></ng-content>
-    </section>
+    </div>
 </section>

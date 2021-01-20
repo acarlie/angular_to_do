@@ -11,9 +11,12 @@ export class ToDoItemComponent implements OnInit {
   @Input('todo') todo: any = {};
   @Input('isComplete') isComplete: boolean;
 
+  public id: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.id = this.idGenerator();
   }
  
   @Output() deleteEvent = new EventEmitter();
@@ -26,5 +29,13 @@ export class ToDoItemComponent implements OnInit {
   toggleToDo(todo) {
     this.markEvent.emit(todo);
   }
+
+  idGenerator() {
+    const S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
 
 }

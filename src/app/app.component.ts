@@ -12,19 +12,28 @@ import { ToDoDataService } from './to-do/to-do-data.service';
 export class AppComponent {
   newToDo: ToDo = new ToDo();
 
+  public notification: string = "";
+
   constructor(private toDoDataService: ToDoDataService) {
   }
   
   addToDo() {
     this.toDoDataService.addToDo(this.newToDo);
+    this.notification = `${this.newToDo.title} added to task list`;
     this.newToDo = new ToDo();
   }
 
   toggleComplete(todo) {
+    if (todo.complete) {
+      this.notification = `Task ${todo.title} marked incomplete`;
+    } else {
+      this.notification = `Task ${todo.title} marked complete`;
+    }
     this.toDoDataService.toggleComplete(todo);
   }
 
   deleteToDo(todo) {
+    this.notification = `Task ${todo.title} deleted`;
     this.toDoDataService.deleteToDo(todo.id);
   }
 
