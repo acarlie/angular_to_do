@@ -12,15 +12,19 @@ import { ToDoDataService } from './to-do/to-do-data.service';
 export class AppComponent {
   newToDo: ToDo = new ToDo();
 
-  public notification: string = "";
+  public notification = '';
 
   constructor(private toDoDataService: ToDoDataService) {
   }
-  
+
   addToDo() {
     this.toDoDataService.addToDo(this.newToDo);
     this.notification = `${this.newToDo.title} added to task list`;
     this.newToDo = new ToDo();
+  }
+
+  onSubmit(value) {
+    console.log(this.newToDo);
   }
 
   toggleComplete(todo) {

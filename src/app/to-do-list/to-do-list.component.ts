@@ -7,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToDoListComponent implements OnInit {
 
-  @Input('message') message: string;
-  @Input('condition') condition: boolean;
-  
+  @Input() public message: string;
+  @Input() public condition: boolean;
+
   constructor() { }
 
   ngOnInit() {

@@ -3,8 +3,8 @@ import { ToDo } from './to-do';
 
 const exampleToDos = [
   {id: 0, title: '← Mark this example task complete using the checkbox.', complete: false},
-  {id: 1, title: 'Walk the cat.', complete: false}, 
-  {id: 2, title: 'Mow the lawn.', complete: false}, 
+  {id: 1, title: 'Walk the cat.', complete: false},
+  {id: 2, title: 'Mow the lawn.', complete: false},
   {id: 3, title: 'This is a completed task, delete it using the delete button →', complete: true}
 ];
 
@@ -14,13 +14,13 @@ const exampleToDos = [
 
 export class ToDoDataService {
   todos: ToDo[] = JSON.parse(localStorage.getItem('todos')) || [];
-  lastId: number = 0;
+  lastId = 0;
 
-  constructor() { 
+  constructor() {
     this.setId();
     this.setTodos();
   }
-  
+
   setId(): ToDoDataService {
     this.lastId = this.todos.length;
     return this;
@@ -50,11 +50,11 @@ export class ToDoDataService {
     setTimeout(() => {
       this.todos = this.todos.filter(x => x.id !== id);
       this.saveToLocal(this.todos);
-    }, 250)
+    }, 250);
     return this;
   }
 
-  toggleComplete (todo: any): ToDoDataService {
+  toggleComplete(todo: any): ToDoDataService {
     setTimeout(() => {
       todo.complete = todo.complete ? false : true;
       this.saveToLocal(this.todos);
@@ -62,7 +62,7 @@ export class ToDoDataService {
     return todo;
   }
 
-  saveToLocal(todos: any){
+  saveToLocal(todos: any) {
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 

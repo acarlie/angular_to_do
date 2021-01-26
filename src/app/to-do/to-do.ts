@@ -1,9 +1,9 @@
 export class ToDo {
-    id: number;
-    title: string = '';
-    complete: boolean = false;
+  id: number;
+  title = '';
+  complete = false;
 
-    constructor(values: Object = {}){
-        Object.assign(this, values);
-    }
+  constructor(values: object = {}) {
+    Object.assign(this, values);
+  }
 }

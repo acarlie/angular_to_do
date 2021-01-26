@@ -3,7 +3,12 @@
   <main class='main'>
     <app-header title='To Do'>
       <app-container [padding]='false' ariaLabel="Add a task">
-        <input class='input-text--add' type="text" placeholder='Add a task...' autofocus='' [(ngModel)]="newToDo.title" (keyup.enter)="addToDo()" aria-label='Add a task.'>
+        <form (ngSubmit)="addToDo()" #taskForm="ngForm" aria-label="Add a task">
+          <label class="sr-only" for="task">Task name</label>
+          <input class='input-text--add' type="text" placeholder='Add a task...' autofocus=''
+            [(ngModel)]="newToDo.title" name="task" #task="ngModel" id="task">
+          <input class="sr-only" type="submit" value="Add task" />
+        </form>
       </app-container>
     </app-header>
 
@@ -13,25 +18,26 @@
 
     <app-container title='Tasks' [padding]='true'>
       <app-to-do-list message='No tasks to display :-(.' [condition]="todos.length === 0">
-        <app-to-do-item *ngFor='let todo of todos' (deleteEvent)='deleteToDo($event)' (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='false'>
+        <app-to-do-item *ngFor='let todo of todos' (deleteEvent)='deleteToDo($event)'
+          (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='false'>
         </app-to-do-item>
       </app-to-do-list>
     </app-container>
-  
+
     <app-container title='Completed' [padding]='true'>
       <app-to-do-list message='No tasks completed T_T.' [condition]="completed.length === 0">
-        <app-to-do-item *ngFor='let todo of completed' (deleteEvent)='deleteToDo($event)' (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='true'>
+        <app-to-do-item *ngFor='let todo of completed' (deleteEvent)='deleteToDo($event)'
+          (markEvent)='toggleComplete($event)' [todo]='todo' [isComplete]='true'>
         </app-to-do-item>
       </app-to-do-list>
     </app-container>
   </main>
-  
+
   <footer class='footer'>
     Developed by Amelia Carlie <br>
-    <a class='footer__link' href='https://github.com/acarlie' target="_blank" rel="noreferrer noopener" aria-label="Visit Amelia Carlie's GitHub profile, opens in new tab">github.com/acarlie</a> | 
-    <a class='footer__link' href='https://codepen.io/acarlie/' target="_blank" rel="noreferrer noopener" aria-label="Visit Amelia Carlie's CodePen profile, opens in new tab">codepen.io/acarlie</a>
+    <a class='footer__link' href='https://github.com/acarlie' target="_blank" rel="noreferrer noopener"
+      aria-label="Visit Amelia Carlie's GitHub profile, opens in new tab">github.com/acarlie</a> |
+    <a class='footer__link' href='https://codepen.io/acarlie/' target="_blank" rel="noreferrer noopener"
+      aria-label="Visit Amelia Carlie's CodePen profile, opens in new tab">codepen.io/acarlie</a>
   </footer>
 </div>
-
-
-

@@ -7,10 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ContainerComponent implements OnInit {
 
-  @Input('title') title: string;
-  @Input('padding') padding: boolean;
-  @Input('ariaLabel') ariaLabel: string;
-  
+  @Input() public title: string;
+  @Input() public padding: boolean;
+  @Input() public ariaLabel: string;
+
   constructor() { }
 
   ngOnInit() {
