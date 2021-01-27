@@ -1,10 +1,11 @@
 <li class="todo__item">
-    <button class='input-check__container' (click)="toggleToDo(todo)" aria-label="Mark task complete" attr.aria-describedby="{{id}}">
-      <span class="input-check__check {{isComplete ? 'input-check__check--compete': ''}}"></span>
-      <span [class.input-check__custom]='!isComplete' [class.input-check__custom-checked]='isComplete'></span>
-    </button>
-    <span id="{{id}}" class="todo__text">{{todo.title}}</span>
-    <button class="todo__delete" (click)='deleteToDo(todo)' aria-label="Delete task" attr.aria-describedby="{{id}}">
-      <span class="todo__delete-inner"></span>
-    </button>
+  <button class='button-complete' (click)="toggleToDo(todo)" aria-label="Mark task complete"
+    attr.aria-describedby="{{id}}">
+    <span class="button-complete__check {{isComplete ? 'input-check__check--compete': ''}}"></span>
+    <span [class.button-complete__custom]='!isComplete' [class.button-complete__custom--checked]='isComplete'></span>
+  </button>
+  <span id="{{id}}" class="todo__text">{{todo.title}}</span>
+  <button class="button-delete" (click)='deleteToDo(todo)' aria-label="Delete task" attr.aria-describedby="{{id}}">
+    <span class="button-delete__inner"></span>
+  </button>
 </li>

@@ -23,10 +23,6 @@ export class AppComponent {
     this.newToDo = new ToDo();
   }
 
-  onSubmit(value) {
-    console.log(this.newToDo);
-  }
-
   toggleComplete(todo) {
     if (todo.complete) {
       this.notification = `Task ${todo.title} marked incomplete`;

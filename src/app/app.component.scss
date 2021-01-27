@@ -1,183 +1,86 @@
 @import './../assets/scss/variables';
 @import './../assets/scss/mixins';
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.main{
-    flex: 9;
-    padding: $spacing-xl;
+.main {
+  flex: 9;
+  padding: $spacing-xl;
 }
 
 .sr-only {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-.footer{
-    flex: 1;
-    justify-self: flex-end;
-    padding: $spacing-xl;
-    box-shadow: 0px 5px 10px rgba(0,0,14,.3) inset;
-    background-color: rgb(58, 58, 75);
-    color: $color-neutral;
-    text-align: center;
-    font-size: small;
-    line-height: $spacing-xl;
-    letter-spacing: .5px;
+.footer {
+  flex: 1;
+  justify-self: flex-end;
+  padding: $spacing-xl;
+  box-shadow: 0px 5px 10px rgba(0, 0, 14, .3) inset;
+  background-color: rgb(58, 58, 75);
+  color: $color-neutral;
+  text-align: center;
+  font-size: small;
+  line-height: $spacing-xl;
+  letter-spacing: .5px;
 
-    &__link{
-        text-decoration: none;
-        &:link, &:visited, &:active{
-            color: #99a;
-        }
+  &__link {
+    text-decoration: none;
 
-        &:hover{
-            color: #bbc;
-        }
+    &:link,
+    &:visited,
+    &:active {
+      color: #99a;
     }
-    
+
+    &:hover {
+      color: #bbc;
+    }
+  }
+
 }
 
-.input{
-    &-text{
-        @include box;
-        font-size: $text-body;
-        width: 100%;
+.form {
+  font-size: $text-body;
+  width: 100%;
+  display: flex;
 
-        &--add{
-            @extend .input-text;
-            &:focus {
-                box-shadow: 0 0 0 2px $color-secondary;
-            }
-        }
-    }
-
-    &-check{
-
-        &__container{
-            user-select: none;
-            position: relative;
-            height: $text-body;
-        }
-
-        &__check{
-            opacity: 0;
-            background: red;
-            z-index: 5;
-            position: relative;
-            cursor: pointer;
-
-            &:focus + .input-check__custom, &:hover + .input-check__custom{
-                border: 2px solid $color-primary;
-            }
-
-            &:checked + .input-check__custom::after{
-                display: block;
-            }
-            
-        }
-
-        &__custom{
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: $text-body;
-            width: $text-body;
-            background-color: transparent;
-            border: 2px solid $color-neutral;
-            transition: border .5s;
-
-            &::after{
-                display: none;
-                position: absolute;
-                content: '';
-                left: 4px;
-                top: 0px;
-                width: 5px;
-                height: 10px;
-                border: solid $color-primary;
-                border-width: 0 2px 2px 0;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                transform: rotate(45deg);
-            }
-
-            &-checked{
-                @extend .input-check__custom;
-            }
-        }
-    }
-}
-
-.todo{
+  &__input {
+    padding: $spacing-lg;
+    background-color: $color-white;
+    border: 2px solid $color-white;
     width: 100%;
-    margin-top: $spacing-lg;
 
-    &__item{
-        cursor: pointer;
-        opacity: .8;
-        margin-top: $spacing;
-        display: flex;
-        align-items: center;
-        transition: all .5s;
-        border-left: 3px solid $color-neutral-lt;
-        border-right: 3px solid $color-neutral-lt;
-        padding: $spacing-sm $spacing-lg;
+    &:focus {
+      border: 2px solid $color-neutral-dk;
+    }
+  }
 
-        &:focus, &:focus-within, &:hover{
-            outline: none;
-            opacity: 1;
-            border-left: 3px solid $color-neutral;
-            border-right: 3px solid $color-neutral;
-        }
+  &__submit {
+    padding: $spacing-lg;
+    background-color: $color-white;
+    border: 2px solid $color-white;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    color: $color-neutral;
+    transition: color .5s;
+
+    &:hover {
+      color: $color-neutral-dk;
     }
 
-    &__text{
-        cursor: pointer;
-        width: 100%;
-        font-family: $font-headings;
-        padding: 0 $spacing-sm;
+    &:focus {
+      border: 2px solid $color-neutral-dk;
+      color: $color-neutral-dk;
     }
-
-    &__delete{
-        align-self: center;
-        position: relative;
-        padding: $spacing;
-
-        &::before, &::after{
-            content: ' ';
-            transition: background-color .5s;
-            position: absolute;
-            top: -1px;
-            left: 48%;
-            width: 2px;
-            height: 100%;
-            border-radius: 2px;
-            background-color: $color-neutral;
-        }
-        
-        &::before{
-            transform: rotate(-45deg);
-        }
-        
-        &::after{
-            transform: rotate(45deg);
-        }
-
-        &:hover::before, 
-        &:hover::after, 
-        &:focus::before,
-        &:focus::after{
-            background-color: $color-secondary
-        }
-    }
+  }
 }
