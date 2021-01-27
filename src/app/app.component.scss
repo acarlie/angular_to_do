@@ -53,6 +53,7 @@
   font-size: $text-body;
   width: 100%;
   display: flex;
+  background: $color-white;
 
   &__input {
     padding: $spacing-lg;
@@ -62,34 +63,15 @@
     border-radius: 0;
     box-shadow: none;
     margin: 0;
+    font-size: 1rem;
 
     &:focus {
       border: 2px solid $color-neutral-dk;
     }
   }
-
-  // &__submit {
-  //   background-color: $color-white;
-  //   background: $color-white;
-  //   border-radius: 0;
-  //   padding: $spacing-lg;
-  //   border: 2px solid $color-white;
-  //   font-size: 2rem;
-  //   line-height: 1.5rem;
-  //   color: $color-neutral;
-  //   transition: color .5s;
-
-  //   &:hover {
-  //     color: $color-neutral-dk;
-  //   }
-
-  //   &:focus {
-  //     border: 2px solid $color-neutral-dk;
-  //     color: $color-neutral-dk;
-  //   }
-  // }
 }
 
+// Needed higher specificity for iOS
 input[type="submit"].form__submit {
   margin: 0;
   background-color: $color-white;
@@ -110,4 +92,5 @@ input[type="submit"].form__submit {
     border: 2px solid $color-neutral-dk;
     color: $color-neutral-dk;
   }
+
 }

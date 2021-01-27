@@ -15,7 +15,7 @@
         position: relative;
         top: -2.5px;
         left: -2.5px;
-        
+
         &--padding{
             @extend .container__content;
             @include box;
