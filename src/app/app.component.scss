@@ -61,6 +61,7 @@
     width: 100%;
     border-radius: 0;
     box-shadow: none;
+    margin: 0;
 
     &:focus {
       border: 2px solid $color-neutral-dk;
@@ -90,6 +91,7 @@
 }
 
 input[type="submit"].form__submit {
+  margin: 0;
   background-color: $color-white;
   background: $color-white;
   border-radius: 0;
