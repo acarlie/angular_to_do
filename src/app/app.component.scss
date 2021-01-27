@@ -59,28 +59,53 @@
     background-color: $color-white;
     border: 2px solid $color-white;
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
 
     &:focus {
       border: 2px solid $color-neutral-dk;
     }
   }
 
-  &__submit {
-    padding: $spacing-lg;
-    background-color: $color-white;
-    border: 2px solid $color-white;
-    font-size: 2rem;
-    line-height: 1.5rem;
-    color: $color-neutral;
-    transition: color .5s;
+  // &__submit {
+  //   background-color: $color-white;
+  //   background: $color-white;
+  //   border-radius: 0;
+  //   padding: $spacing-lg;
+  //   border: 2px solid $color-white;
+  //   font-size: 2rem;
+  //   line-height: 1.5rem;
+  //   color: $color-neutral;
+  //   transition: color .5s;
 
-    &:hover {
-      color: $color-neutral-dk;
-    }
+  //   &:hover {
+  //     color: $color-neutral-dk;
+  //   }
 
-    &:focus {
-      border: 2px solid $color-neutral-dk;
-      color: $color-neutral-dk;
-    }
+  //   &:focus {
+  //     border: 2px solid $color-neutral-dk;
+  //     color: $color-neutral-dk;
+  //   }
+  // }
+}
+
+input[type="submit"].form__submit {
+  background-color: $color-white;
+  background: $color-white;
+  border-radius: 0;
+  padding: $spacing-lg;
+  border: 2px solid $color-white;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  color: $color-neutral;
+  transition: color .5s;
+
+  &:hover {
+    color: $color-neutral-dk;
+  }
+
+  &:focus {
+    border: 2px solid $color-neutral-dk;
+    color: $color-neutral-dk;
   }
 }
